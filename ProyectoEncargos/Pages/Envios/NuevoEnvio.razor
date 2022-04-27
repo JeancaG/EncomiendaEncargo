@@ -1,0 +1,65 @@
+﻿@page "/Envios/NuevoEnvio"
+<h3>Nuevo Envio</h3>
+<br />
+
+<EditForm Model="@ship">
+    <DataAnnotationsValidator />
+
+    <div class="form-group row">
+        <label for="Codigo" class="col-sm-2 col-form-label">
+            Código del envio
+        </label>
+        <div class="col-sm-10">
+            <InputText id="CodigoEnvio" class="form-control" placeholder="Código" @bind-Value="ship.CodigoEnvio" />
+            <ValidationMessage For="@(() => ship.CodigoEnvio)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Remitente" class="col-sm-2 col-form-label">
+            Nombre del remitente
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Nombre" class="form-control" placeholder="Nombre" @bind-Value="ship.Remitente" />
+            <ValidationMessage For="@(() => ship.Remitente)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Descipcion" class="col-sm-2 col-form-label">
+            Descripcion del objeto
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Descripcion" class="form-control" placeholder="Descripcion" @bind-Value="ship.Descripcion"/>
+            <ValidationMessage For="@(() => ship.Descripcion)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Direccion" class="col-sm-2 col-form-label">
+            Direccion del envio
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Clave" class="form-control" placeholder="Direccion" @bind-Value="ship.DireccionEntrega"/>
+            <ValidationMessage For="@(() => ship.DireccionEntrega)" />
+        </div>
+    </div>
+
+       <div class="form-group">
+        <label for="Fecha" class="col-sm-2 col-form-label">
+            Fecha del envio
+        </label>
+        <div class="col-sm-10">
+            <InputDate id="Fecha" class="form-control" placeholder="FechaEnvio" @bind-Value="ship.FechaEnvio"/>
+            <ValidationMessage For="@(() => ship.FechaEnvio)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <p>
+            <input type="submit" class="btn-toolbar btn-primary" value="Guardar" @onclick="Guardar" />
+            <input type="submit" class="btn-toolbar btn-danger" value="Cancelar" @onclick="Cancelar" />
+        </p>
+    </div>
+
+</EditForm>
